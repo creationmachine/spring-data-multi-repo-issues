@@ -11,6 +11,8 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
+import java.util.Date;
 
 @EnableElasticsearchRepositories("com.zampettim.springdata.multirepo.repository.es")
 @EnableJpaRepositories("com.zampettim.springdata.multirepo.repository.jpa")
@@ -39,19 +41,16 @@ public class MultirepoApplication implements CommandLineRunner
 
     Person p = new Person("Donald", "Duck");
     p.setLastModifiedBy("system");
-    //p.setLastModifiedOn(LocalDateTime.now());
     jpaRepository.save(p);
     esRepository.index(p);
 
     p = new Person("Daffy", "Duck");
     p.setLastModifiedBy("system");
-    //p.setLastModifiedOn(LocalDateTime.now());
     jpaRepository.save(p);
     esRepository.index(p);
 
     p = new Person("Daisy", "Duck");
     p.setLastModifiedBy("system");
-    //p.setLastModifiedOn(LocalDateTime.now());
     jpaRepository.save(p);
     esRepository.index(p);
 

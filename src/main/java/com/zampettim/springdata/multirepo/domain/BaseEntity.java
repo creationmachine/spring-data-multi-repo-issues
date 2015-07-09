@@ -3,12 +3,15 @@
  */
 package com.zampettim.springdata.multirepo.domain;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Version;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * Base class that implements common aspects of all Domain/Entity objects
@@ -22,9 +25,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public abstract class BaseEntity
 {
-  /*@Column(name = "last_modified_on")
-  protected LocalDateTime lastModifiedOn;*/
-
   @Column(name = "last_modified_by")
   protected String lastModifiedBy;
 
