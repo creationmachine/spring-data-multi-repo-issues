@@ -15,5 +15,4 @@ import com.zampettim.springdata.multirepo.domain.Person;
  */
 public interface PersonJpaRepository extends JpaRepository<Person, Long>
 {
-
 }
